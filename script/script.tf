@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "script-nic0" {
   availability_set_id   = "${azurerm_availability_set.script-as.id}"
 
   storage_os_disk {
-    name              = "ideabfd-osdisk0"
+    name              = "script-osdisk0"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "${var.osdisk_type}"
@@ -58,7 +58,7 @@ resource "azurerm_network_interface" "script-nic0" {
     disk_size_gb      = "128"
   }
   storage_data_disk {
-    name              = ""
+    name              = "${azurerm_managed_disk.script-datadisk0[count.index].name}"
     managed_disk_type = "Standard_LRS"
     disk_size_gb      = "100"
     create_option     = "Empty"
@@ -76,4 +76,5 @@ resource "azurerm_network_interface" "script-nic0" {
    computer_name  = "pas-script0"
    admin_username = "${var.admin_username}"
   }
+
 
