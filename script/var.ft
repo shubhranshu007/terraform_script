@@ -10,6 +10,10 @@ variable "service" {
   default .   = "script"
 } 
 
+variable "enviroment" {
+  description = "enviroment name"
+  default     = "prod" 
+}
 variable "team" {
   description = "team name"
   default     = "devops"
@@ -31,6 +35,38 @@ variable "resource_group_name" {
 }
 variable "network_group_security_id" {
   description = "network_group_security_id"
-  default     = 
+  default     = ""
 }
+
+variable "enable_ip_forwarding" {
+  description = "whether to enable_ip_forwarding or not"
+  default     = "true"
+}
+
+variable "enable_accelerated_networking" {
+  description = "whether to enable accelerated networking or not"
+  default     = true
+}
+
+variable "private_ip_address_allocation" {
+  description = "ip address allocation"
+  default     = "Dynamic"
+}
+
+variable "vm_size" {
+  description = "instance type / size of core and ram"
+  default     = "Standard_D16_v3"
+}
+
+variable "osdisk_type" {
+  description = "type odf os disk"
+  default = "Standard_LRS"
+}
+
+variable "osdisk_size" {
+  description = "size of os disk"
+  default    = "128"
+}
+
+
 
