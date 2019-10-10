@@ -83,7 +83,7 @@ resource "azurerm_network_interface" "script-nic0" {
             path     = "/home/sysops/.ssh/authorized_keys"
             key_data = "authorized_keys"
         }
- }
+  }
 
 
   boot_diagnostics {
