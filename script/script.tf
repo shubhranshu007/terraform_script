@@ -72,12 +72,12 @@ resource "azurerm_network_interface" "script-nic0" {
     version   = "latest"
   }
 
- os_profile {
+  os_profile {
    computer_name  = "pas-script0"
    admin_username = "${var.admin_username}"
   }
 
- os_profile_linux_config {
+  os_profile_linux_config {
         disable_password_authentication = true
         ssh_keys {
             path     = "/home/sysops/.ssh/authorized_keys"
@@ -86,5 +86,16 @@ resource "azurerm_network_interface" "script-nic0" {
  }
 
 
+  boot_diagnostics {
+     enabled     = "true"
+     storage_uri = "${var.boot_diagnostics_storage_uri}"
+  }
 
+  tags = {
+   service = "${var.service}"
+   environment = "${var.environment}"
+   team = "${var.team}"
+   group = "${var.group}"
+  }
+}
     
