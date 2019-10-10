@@ -77,13 +77,14 @@ resource "azurerm_network_interface" "script-nic0" {
    admin_username = "${var.admin_username}"
   }
 
-os_profile_linux_config {
+ os_profile_linux_config {
         disable_password_authentication = true
         ssh_keys {
             path     = "/home/sysops/.ssh/authorized_keys"
             key_data = "authorized_keys"
         }
-}
+ }
+
 
 
     
