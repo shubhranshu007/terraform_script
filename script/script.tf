@@ -26,7 +26,7 @@ resource "azurerm_availability_set" "script-as" {
 resource "azurerm_network_interface" "script-nic0" {
   name                          = "script-nic0"
   location                      = "${var.location}"
-  count                         = 2
+  count                         = 1
   resource_group_name           = "${azurerm_resource_group.script-rg.name}"
   network_security_group_id     = "${var.network_security_group_id}"
   enable_ip_forwarding          = "${var.enable_ip_forwarding}"
