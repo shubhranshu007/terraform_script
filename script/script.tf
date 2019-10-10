@@ -58,7 +58,7 @@ resource "azurerm_network_interface" "script-nic0" {
     disk_size_gb      = "128"
   }
   storage_data_disk {
-    name              = "${azurerm_managed_disk.script-datadisk0[count.index].name}"
+    name              = ""
     managed_disk_type = "Standard_LRS"
     disk_size_gb      = "100"
     create_option     = "Empty"
@@ -77,4 +77,13 @@ resource "azurerm_network_interface" "script-nic0" {
    admin_username = "${var.admin_username}"
   }
 
+os_profile_linux_config {
+        disable_password_authentication = true
+        ssh_keys {
+            path     = "/home/sysops/.ssh/authorized_keys"
+            key_data = "authorized_keys"
+        }
+}
 
+
+    
