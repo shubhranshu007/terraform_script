@@ -68,5 +68,22 @@ variable "osdisk_size" {
   default    = "128"
 }
 
+variable "datadisk_type" {
+  description = "type of data disk"
+  default     = "Standard_LRS"
+}
 
+variable "datadisk_size" {
+  description  = "size of data disk"
+  default      = "500"
+}
+variable "admin_user" {
+  description = "admin user name"
+  default     = "sysops"
+}
+
+variable "boot_diagnostics_storage_uri" {
+  description = "Boot diagnostics storage URI"
+  default     = ""
+}
 
