@@ -66,9 +66,9 @@ resource "azurerm_network_interface" "script-nic0" {
   }
 
   storage_image_reference {
-    publisher = "OpenLogic"
-    offer     = "CentOS"
-    sku       = "7.5"
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "16.04-LTS"
     version   = "latest"
   }
 
