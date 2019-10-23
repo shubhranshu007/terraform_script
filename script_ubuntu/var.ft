@@ -1,0 +1,89 @@
+# create variable for location
+
+variable "location" {
+  description = "azure location"
+  default = "southindia"
+}
+
+variable "service" {
+  description = "service name "
+  default .   = "script"
+} 
+
+variable "enviroment" {
+  description = "enviroment name"
+  default     = "prod" 
+}
+variable "team" {
+  description = "team name"
+  default     = "devops"
+}
+
+variable "platform_fault_domain_count" {
+  description = "platform foult count"
+  default     = "2"
+}
+
+variable "platform_update_domain_count" {
+  description = "platform update count"
+  default     = "20"
+}
+
+variable "resource_group_name" {
+  description = "resource_group_name"
+  default     = "script"
+}
+variable "network_group_security_id" {
+  description = "network_group_security_id"
+  default     = ""
+}
+
+variable "enable_ip_forwarding" {
+  description = "whether to enable_ip_forwarding or not"
+  default     = "true"
+}
+
+variable "enable_accelerated_networking" {
+  description = "whether to enable accelerated networking or not"
+  default     = true
+}
+
+variable "private_ip_address_allocation" {
+  description = "ip address allocation"
+  default     = "Dynamic"
+}
+
+variable "vm_size" {
+  description = "instance type / size of core and ram"
+  default     = "Standard_D16_v3"
+}
+
+variable "osdisk_type" {
+  description = "type odf os disk"
+  default = "Standard_LRS"
+}
+
+variable "osdisk_size" {
+  description = "size of os disk"
+  default    = "128"
+}
+
+variable "datadisk_type" {
+  description = "type of data disk"
+  default     = "Standard_LRS"
+}
+
+variable "datadisk_size" {
+  description  = "size of data disk"
+  default      = "500"
+}
+variable "admin_user" {
+  description = "admin user name"
+  default     = "sysops"
+}
+
+variable "boot_diagnostics_storage_uri" {
+  description = "Boot diagnostics storage URI"
+  default     = ""
+}
+
